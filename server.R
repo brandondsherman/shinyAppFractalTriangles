@@ -32,12 +32,12 @@ shinyServer(function(input, output) {
     startPoint = getGoodPoint()
     data$locx[4] = startPoint[1]; data$locy[4] = startPoint[2]
     
-    for(j in 5:(maxObs+3)){
+    for(j in 5:(maxObs+4)){
       corner = data$trianglePoint[j]
       data$locx[j] = (data$locx[j-1] + data$locx[corner])/2
       data$locy[j] = (data$locy[j-1] + data$locy[corner])/2
     }
-    data[maxObs+3,] = data[4]
+    
     data
   })
   
